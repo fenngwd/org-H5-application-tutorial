@@ -36,4 +36,9 @@ public class UrlConstant {
      */
     public static final String URL_USER_SIMPLELIST = HOST + "/user/simplelist";
 
+
+    /**
+     * 发送工作通知 url
+     */
+    public static final String URL_CORP_CONVERSION = HOST + "/topapi/message/corpconversation/asyncsend_v2";
 }

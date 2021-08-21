@@ -56,6 +56,10 @@
             <artifactId>commons-collections4</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.gitlab4j</groupId>
+            <artifactId>gitlab4j-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.dingtalk</groupId>
             <artifactId>dingtalk-api-sdk</artifactId>
             <version>1.0.0-SNAPSHOT</version>
