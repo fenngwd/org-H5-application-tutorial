@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class GitlabWebhookController {
     private static final Logger log = LoggerFactory.getLogger(GitlabWebhookController.class);
@@ -18,13 +20,13 @@ public class GitlabWebhookController {
     private GitlabWebhookService gitlabWebhookService;
 
     @PostMapping("/gitlab/webhook")
-    public String webhook(@RequestBody Event event) {
+    public String webhook(HttpServletRequest request) {
         try {
-            this.gitlabWebhookService.handleEvent(event);
-        } catch (GitLabApiException e) {
+            this.gitlabWebhookService.handleRequest(request);
+        } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            log.info(event.toString());
+//        } finally {
+//            log.info(request.toString());
         }
         return "OK";
     }
